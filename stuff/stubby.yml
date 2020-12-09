@@ -22,13 +22,11 @@ tls_authentication: GETDNS_AUTHENTICATION_REQUIRED
 
 # EDNS0 option to pad the size of the DNS query to the given blocksize
 # 128 is currently recommended by
-# https://tools.ietf.org/html/draft-ietf-dprive-padding-policy-03
-# TODO: Check what is about tls_query_padding_blocksize
+# https://tools.ietf.org/html/rfc8467
 tls_query_padding_blocksize: 128
 
 # EDNS0 option for ECS client privacy as described in Section 7.1.2 of
 # https://tools.ietf.org/html/rfc7871
-# TODO: Check what edns_client_subnet_private is about
 edns_client_subnet_private : 1
 
 ############################# CONNECTION SETTINGS ##############################
@@ -67,8 +65,8 @@ listen_addresses:
 upstream_recursive_servers:
 ####### IPv4 addresses ######
 ### Anycast services ###
-## DigitaleGesellschaft 
-## (removed tls_pubkey_pinset due changing Let’s Encrypt certificates.) 
+## dns.digitale-gesellschaft.ch
+## (removed tls_pubkey_pinset due to changing Let’s Encrypt certificates.) 
   - address_data: 185.95.218.42
     tls_auth_name: "dns.digitale-gesellschaft.ch"
   - address_data: 185.95.218.43
