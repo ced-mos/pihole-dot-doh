@@ -23,10 +23,12 @@ tls_authentication: GETDNS_AUTHENTICATION_REQUIRED
 # EDNS0 option to pad the size of the DNS query to the given blocksize
 # 128 is currently recommended by
 # https://tools.ietf.org/html/draft-ietf-dprive-padding-policy-03
+# TODO: Check what is about tls_query_padding_blocksize
 tls_query_padding_blocksize: 128
 
 # EDNS0 option for ECS client privacy as described in Section 7.1.2 of
 # https://tools.ietf.org/html/rfc7871
+# TODO: Check what edns_client_subnet_private is about
 edns_client_subnet_private : 1
 
 ############################# CONNECTION SETTINGS ##############################
@@ -65,16 +67,13 @@ listen_addresses:
 upstream_recursive_servers:
 ####### IPv4 addresses ######
 ### Anycast services ###
-## Quad 9 'secure' service - Filters, does DNSSEC, doesn't send ECS
-#  - address_data: 9.9.9.9
-#    tls_auth_name: "dns.quad9.net"
-## Cloudflare 1.1.1.1 and 1.0.0.1
-#  - address_data: 1.1.1.1
-#    tls_auth_name: "cloudflare-dns.com"
-#  - address_data: 1.0.0.1
-#    tls_auth_name: "cloudflare-dns.com"
-## Google
-  - address_data: 8.8.8.8
-    tls_auth_name: "dns.google"
-  - address_data: 8.8.4.4
-    tls_auth_name: "dns.google"
+## DigitaleGesellschaft 
+## (removed tls_pubkey_pinset due changing Let’s Encrypt certificates.) 
+  - address_data: 185.95.218.42
+    tls_auth_name: "dns.digitale-gesellschaft.ch"
+  - address_data: 185.95.218.43
+    tls_auth_name: "dns.digitale-gesellschaft.ch"
+  - address_data: 2a05:fc84::42
+    tls_auth_name: "dns.digitale-gesellschaft.ch"
+  - address_data: 2a05:fc84::43 
+    tls_auth_name: "dns.digitale-gesellschaft.ch"
