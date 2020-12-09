@@ -1,5 +1,5 @@
 ARG FRM='testdasi/pihole-base-buster-plus'
-ARG TAG='latest'
+ARG TAG='stable-rpi4'
 
 FROM ${FRM}:${TAG}
 ARG FRM

@@ -2,6 +2,8 @@ proxy-dns: true
 proxy-dns-port: 5153
 proxy-dns-address: 127.1.1.1
 proxy-dns-upstream:
+ - https://dns.digitale-gesellschaft.ch/dns-query
+proxy-dns-bootstrap:
 ## dns.digitale-gesellschaft.ch
  - https://185.95.218.42/dns-query
  - https://185.95.218.43/dns-query
